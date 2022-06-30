@@ -1,0 +1,18 @@
+city,lat,lng,country,iso2,admin_name,capital,population,population_proper
+Gaborone,-24.6569,25.9086,Botswana,BW,Gaborone,primary,231626,231626
+Francistown,-21.1736,27.5125,Botswana,BW,Francistown,admin,89979,88380
+Molepolole,-24.4066,25.4951,Botswana,BW,Kweneng,admin,67598,67598
+Maun,-19.9833,23.4167,Botswana,BW,North West,admin,57067,57067
+Mahalapye,-23.1041,26.8142,Botswana,BW,Central,,50744,44471
+Selibe Phikwe,-21.9667,27.9167,Botswana,BW,Selibe Phikwe,admin,49724,49724
+Serowe,-22.3833,26.7167,Botswana,BW,Central,admin,48573,47419
+Kanye,-24.9833,25.3500,Botswana,BW,Southern,admin,46831,44716
+Mochudi,-24.4167,26.1500,Botswana,BW,Kgatleng,admin,39700,39700
+Lobatse,-25.2167,25.6667,Botswana,BW,Lobatse,admin,29700,29700
+Tshabong,-26.0200,22.4056,Botswana,BW,Kgalagadi,admin,9679,9679
+Kasane,-17.7983,25.1536,Botswana,BW,Chobe,admin,9250,6299
+Ghanzi,-21.7000,21.6500,Botswana,BW,Ghanzi,admin,6306,6306
+Ramotswa,-24.8667,25.8167,Botswana,BW,South East,admin,,
+Masunga,-20.6245,27.4488,Botswana,BW,North East,admin,,
+Sowa Town,-20.5636,26.2244,Botswana,BW,Sowa Town,admin,,
+Jwaneng,-24.6017,24.7281,Botswana,BW,Jwaneng,admin,,
