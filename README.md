@@ -8,6 +8,10 @@ due to efforts to ensure vaccines are stocked at convenient points of care even 
 their vaccination schedule, i.e., do not receive all their required vaccines, despite access. Delayed
 vaccination puts many children at risk and often requires costly vaccination campaigns to resolve.
 
+**Objective:**
+
+ - predicting which children will not become fully vaccinated by 6 months
+
 **Solutions:** 
  - First through exploratory analysis, we were able to dig actionable insights from that data which will be beneficial to the organization to be able to build a better health supply system.
 
