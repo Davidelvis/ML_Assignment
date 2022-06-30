@@ -2,7 +2,7 @@ import argparse
 import os
 import pickle
 
-from xgboost import xgb
+import xgboost as xgb
 from sklearn.metrics import mean_squared_error
 
 
@@ -13,10 +13,10 @@ def load_pickle(filename: str):
 
 def run(data_path):
 
-    X_train, y_train = load_pickle(os.path.join(data_path, "train.pkl"))
-    X_valid, y_valid = load_pickle(os.path.join(data_path, "valid.pkl"))
+    X_train, y_train = load_pickle(os.path.join(data_path, "train1.pkl"))
+    X_valid, y_valid = load_pickle(os.path.join(data_path, "valid1.pkl"))
 
-    rf = xgb(max_depth=10, random_state=0)
+    rf = xgb.XGBRegressor(max_depth=10, random_state=0)
     rf.fit(X_train, y_train)
     y_pred = rf.predict(X_valid)
 
@@ -28,8 +28,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--data_path",
-        default="./output",
-        help="the location where the processed NYC taxi trip data was saved."
+        default="/home/david/Elvis/macro-eyes/ML_Assignment/Data/",
+        help="the location where the prepared data was saved."
     )
     args = parser.parse_args()
 

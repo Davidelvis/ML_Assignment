@@ -7,7 +7,7 @@ from hyperopt import hp, space_eval
 from hyperopt.pyll import scope
 from mlflow.entities import ViewType
 from mlflow.tracking import MlflowClient
-from sklearn.ensemble import RandomForestRegressor
+import xgboost as xgb
 from sklearn.metrics import mean_squared_error
 
 HPO_EXPERIMENT_NAME = "xgboost-hyperopt"
@@ -34,13 +34,13 @@ def load_pickle(filename):
 
 
 def train_and_log_model(data_path, params):
-    X_train, y_train = load_pickle(os.path.join(data_path, "train.pkl"))
-    X_valid, y_valid = load_pickle(os.path.join(data_path, "valid.pkl"))
-    X_test, y_test = load_pickle(os.path.join(data_path, "test.pkl"))
+    X_train, y_train = load_pickle(os.path.join(data_path, "train1.pkl"))
+    X_valid, y_valid = load_pickle(os.path.join(data_path, "valid1.pkl"))
+    X_test, y_test = load_pickle(os.path.join(data_path, "test1.pkl"))
 
     with mlflow.start_run():
         params = space_eval(SPACE, params)
-        rf = RandomForestRegressor(**params)
+        rf = xgb.Regressor(**params)
         rf.fit(X_train, y_train)
 
         # evaluate model on the validation and test sets
@@ -78,7 +78,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--data_path",
-        default="./output",
+        default="/home/david/Elvis/macro-eyes/ML_Assignment/Data/",
         help="the location where the prepared data was saved."
     )
     parser.add_argument(

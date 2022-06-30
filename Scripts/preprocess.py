@@ -31,16 +31,16 @@ def preprocess(df: pd.DataFrame, dv: DictVectorizer, fit_dv: bool = False):
     return X, dv
 
 
-def run(raw_data_path: str, dest_path: str, dataset: str = "green"):
+def run(raw_data_path: str, dest_path: str, dataset: str = "immun"):
     # load pickle files
     df_train = read_dataframe(
-        os.path.join(raw_data_path, f"{dataset}_training_data")
+        os.path.join(raw_data_path, f"{dataset}_train.pkl")
     )
     df_valid = read_dataframe(
-        os.path.join(raw_data_path, f"{dataset}_validation_data")
+        os.path.join(raw_data_path, f"{dataset}_valid.pkl")
     )
     df_test = read_dataframe(
-        os.path.join(raw_data_path, f"{dataset}_testing_data")
+        os.path.join(raw_data_path, f"{dataset}_test.pkl")
     )
 
     # extract the target
@@ -60,9 +60,9 @@ def run(raw_data_path: str, dest_path: str, dataset: str = "green"):
 
     # save dictvectorizer and datasets
     dump_pickle(dv, os.path.join(dest_path, "dv.pkl"))
-    dump_pickle((X_train, y_train), os.path.join(dest_path, "train.pkl"))
-    dump_pickle((X_valid, y_valid), os.path.join(dest_path, "valid.pkl"))
-    dump_pickle((X_test, y_test), os.path.join(dest_path, "test.pkl"))
+    dump_pickle((X_train, y_train), os.path.join(dest_path, "train1.pkl"))
+    dump_pickle((X_valid, y_valid), os.path.join(dest_path, "valid1.pkl"))
+    dump_pickle((X_test, y_test), os.path.join(dest_path, "test1.pkl"))
 
 
 if __name__ == '__main__':
@@ -70,10 +70,12 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--raw_data_path",
+        default="/home/david/Elvis/macro-eyes/ML_Assignment/Data/",
         help="the location where the raw data was saved"
     )
     parser.add_argument(
         "--dest_path",
+        default="/home/david/Elvis/macro-eyes/ML_Assignment/Data/",
         help="the location where the resulting files will be saved."
     )
     args = parser.parse_args()
